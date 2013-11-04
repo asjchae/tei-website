@@ -2,22 +2,27 @@ doctype 5
 html
   head
     div.container
-      img(src='/images/bokeh.jpg' width='1138')
+      img(src='/images/bokeh.jpg' width='1138' height='200')
       div.bs-docs-section.clearfix
         div.row
           div.col-lg-12
             div.bs-example
               div.navbar.navbar-default
                 div.navbar-header
-                  a.navbar-brand(href='') lily lights
+                  a.navbar-brand(href='/') lily lights
                 div.navbar-collapse.collapse.navbar-responsive-collapse
-                  ul.nav.navbar-nav
+                  ul.nav.navbar-nav.navbar-right
                     li
-                      a(href='/product') Product
+                      a(href='/thestory') The Story
                     li
-                      a(href='/team') Team
+                      a(href='/product') Our Product
+                    li
+                      a(href='/team') The Team
+                    li
+                      a(href='/contact') Contact Us
 
     title= title
     link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/index.css')
   body
     block content

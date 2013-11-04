@@ -1,0 +1,22 @@
+div.maincontent{
+	margin-right: 15%;
+	margin-left: 15%;
+}
+
+div.mainimage {
+	margin: 5%;
+	float: left;
+	max-width: 40%;
+}
+
+div.maintext {
+	margin: 5%;
+	float: right;
+	max-width: 40%;
+	text-align: justify;
+}
+
+div.center {
+	text-align: center;
+	padding: 10px;
+}
