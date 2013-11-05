@@ -33,6 +33,8 @@ app.get('/team', pages.team);
 app.get('/thestory', pages.story);
 app.get('/contact', pages.contact);
 
+app.post('/email', pages.email);
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });

@@ -13,3 +13,7 @@ exports.team = function(req, res){
 exports.contact = function(req, res){
   res.render('contact', { title: 'lily lights | Contact Us' });
 };
+
+exports.email = function(req, res) {
+	res.send(req.body.name + req.body.message);
+};

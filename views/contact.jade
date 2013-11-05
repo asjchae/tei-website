@@ -1,4 +1,15 @@
 extends layout
 
 block content
-  p Contact information coming soon!
+  div.maincontent
+    a(href='mailto:lilylights.olin@gmail.com') Email us
+    |  with questions!
+    form(action='/email', method='post')
+      | Name:  
+      textarea(type='text', rows='1', cols='20', name='name')
+      br
+      br
+      | Message:  
+      textarea(type='text', rows='10', cols='40', name='message')
+      br
+      input(type='submit', value='Submit')

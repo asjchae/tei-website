@@ -20,3 +20,8 @@ div.center {
 	text-align: center;
 	padding: 10px;
 }
+
+div.subcontent{
+	margin-right: 25%;
+	margin-left: 25%;
+}
