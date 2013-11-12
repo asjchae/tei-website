@@ -1,3 +1,5 @@
+var nodemailer = require("nodemailer");
+
 exports.story = function(req, res){
   res.render('story', { title: 'lily lights | The Story' });
 };
@@ -15,5 +17,37 @@ exports.contact = function(req, res){
 };
 
 exports.email = function(req, res) {
-	res.send(req.body.name + req.body.message);
+	var name = req.body.name;
+	var emailaddress = req.body.email;
+	var message = req.body.message;
+
+	var smtpTransport = nodemailer.createTransport("SMTP",{
+	    service: "Gmail",
+	    auth: {
+	        user: "lilylights.olin@gmail.com",
+	        pass: "ebang01!"
+	    }
+	});
+
+	var mailOptions = {
+	    from: emailaddress, // sender address
+	    to: "lilylights.olin@gmail.com", // list of receivers
+	    subject: "Message from " + name, // Subject line
+	    text: message + " <" + emailaddress + ">" // plaintext body
+	}
+
+	// send mail with defined transport object
+	smtpTransport.sendMail(mailOptions, function(error, response){
+	    if(error){
+	        console.log(error);
+	    }else{
+	        console.log("Message sent: " + response.message);
+	    }
+
+	    // if you don't want to use this transport object anymore, uncomment following line
+	    smtpTransport.close(); // shut down the connection pool, no more messages
+	});
+
+	res.redirect('/');
+
 };

@@ -1,15 +1,40 @@
 extends layout
 
 block content
-  div.maincontent
-    a(href='mailto:lilylights.olin@gmail.com') Email us
-    |  with questions!
-    form(action='/email', method='post')
-      | Name:  
-      textarea(type='text', rows='1', cols='20', name='name')
+  div.formcontent
+    br
+    br
+    p Do you have questions? Would you like to place an order? Feel free to send us a message!
+    | We will get back to you shortly.
+    br
+    br
+    br
+    form(action='/email', method='post', id="emailsending")
+      | Name:
+      br
+      textarea(input type='text', rows='1', cols='20', name='name' required)
+      br
+      br
+      | Email Address:
+      br
+      textarea(input type='text', rows='1', cols='40', name='email' required)
       br
       br
       | Message:  
-      textarea(type='text', rows='10', cols='40', name='message')
+      br
+      textarea(input type='text', rows='10', cols='50', name='message' required)
+      br
       br
       input(type='submit', value='Submit')
+      br
+      br
+      br
+      br
+      br
+      br
+
+
+
+
+    //-   a(href='mailto:lilylights.olin@gmail.com') Email us
+    //- |  with questions!

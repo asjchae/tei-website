@@ -11,7 +11,7 @@ div.mainimage {
 
 div.maintext {
 	margin: 5%;
-	float: right;
+	float: left;
 	max-width: 40%;
 	text-align: justify;
 }
@@ -22,6 +22,14 @@ div.center {
 }
 
 div.subcontent{
+	text-align: justify;
+	margin-right: 25%;
+	margin-left: 25%;
+}
+
+
+div.formcontent{
+	text-align: justify;
 	margin-right: 25%;
 	margin-left: 25%;
 }
