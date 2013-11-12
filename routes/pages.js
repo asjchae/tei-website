@@ -21,14 +21,11 @@ exports.email = function(req, res) {
 	var emailaddress = req.body.email;
 	var message = req.body.message;
 
-	var username = process.env.GMAIL_ADDR;
-	var password = process.env.GMAIL_PW;
-
 	var smtpTransport = nodemailer.createTransport("SMTP",{
 	    service: "Gmail",
 	    auth: {
-	        user: "username" || process.env.GMAIL_ADDR,
-	        pass: "password" || process.env.GMAIL_PW
+	        user: process.env.GMAIL_ADDR,
+	        pass: process.env.GMAIL_PW
 	    }
 	});
 
