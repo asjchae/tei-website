@@ -21,17 +21,20 @@ exports.email = function(req, res) {
 	var emailaddress = req.body.email;
 	var message = req.body.message;
 
+	var username = process.env.GMAIL_ADDR;
+	var password = process.env.GMAIL_PW;
+
 	var smtpTransport = nodemailer.createTransport("SMTP",{
 	    service: "Gmail",
 	    auth: {
-	        user: "lilylights.olin@gmail.com",
-	        pass: "ebang01!"
+	        user: "username" || process.env.GMAIL_ADDR,
+	        pass: "password" || process.env.GMAIL_PW
 	    }
 	});
 
 	var mailOptions = {
 	    from: emailaddress, // sender address
-	    to: "lilylights.olin@gmail.com", // list of receivers
+	    to: process.env.GMAIL_ADDR, // list of receivers
 	    subject: "Message from " + name, // Subject line
 	    text: message + " <" + emailaddress + ">" // plaintext body
 	}
